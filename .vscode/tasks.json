@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "C:/raylib/w64devkit/bin/g++.exe src/main.cpp src/Tetromino.cpp src/Renderer.cpp src/Game.cpp -o game.exe -I\"C:/raylib/include\" -I\"./include\" -L\"C:/raylib/lib\" -lraylib -lopengl32 -lgdi32 -lwinmm",
+            "options": {
+                "env": {
+                    "PATH": "C:/raylib/w64devkit/bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
