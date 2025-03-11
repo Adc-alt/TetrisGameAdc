@@ -1,59 +1,68 @@
-# Tetris Game
+# 🎮 Tetris Game
 
-Un juego de Tetris implementado en C++ usando la librería Raylib.
+<div align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-blue.svg" alt="C++ 17">
+  <img src="https://img.shields.io/badge/Raylib-5.0-green.svg" alt="Raylib 5.0">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+</div>
 
-## Características
+A modern implementation of the classic Tetris game built with C++ and Raylib. Experience the timeless puzzle game with smooth controls and classic gameplay mechanics.
 
-- Implementación clásica del Tetris
-- Sistema de puntuación
-- Pantalla de Game Over
-- Reinicio del juego
-- Controles intuitivos
+## ✨ Features
 
-## Controles
+- Classic Tetris gameplay mechanics
+- Smooth and responsive controls
+- Score tracking system
+- Game Over screen with restart option
+- Modern graphics powered by Raylib
+- Clean and maintainable codebase
 
-- **Flecha Arriba**: Rotar pieza
-- **Flecha Izquierda**: Mover pieza a la izquierda
-- **Flecha Derecha**: Mover pieza a la derecha
-- **Flecha Abajo**: Acelerar caída
-- **ESC**: Salir del juego
-- **ENTER**: Reiniciar juego (en pantalla de Game Over)
+## 🎮 Controls
 
-## Requisitos
+| Key | Action |
+|-----|--------|
+| ↑ | Rotate piece |
+| ← | Move piece left |
+| → | Move piece right |
+| ↓ | Accelerate fall |
+| ESC | Exit game |
+| ENTER | Restart game (on Game Over screen) |
 
-- C++17 o superior
+## 🛠️ Requirements
+
+- C++17 or higher
 - Raylib 5.0
-- Compilador compatible con C++17 (g++, clang++, etc.)
+- C++17 compatible compiler (g++, clang++, etc.)
 
-## Instalación
+## 📥 Installation
 
-1. Clona el repositorio:
+1. Clone the repository:
 ```bash
 git clone https://github.com/Adc-alt/TetrisGameAdc.git
 cd TetrisGameAdc
 ```
 
-2. Compila el juego:
+2. Compile the game:
 ```bash
 make
 ```
 
-3. Ejecuta el juego:
+3. Run the game:
 ```bash
 ./game
 ```
 
-## Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 .
-├── include/          # Archivos de cabecera
+├── include/          # Header files
 │   ├── Block.h
 │   ├── Constants.h
 │   ├── Game.h
 │   ├── Renderer.h
 │   └── Tetromino.h
-├── src/             # Archivos fuente
+├── src/             # Source files
 │   ├── Game.cpp
 │   ├── main.cpp
 │   ├── Renderer.cpp
@@ -62,6 +71,12 @@ make
 └── README.md
 ```
 
-## Licencia
+## 📝 License
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+  Made with ❤️ by Adc
+</div>
