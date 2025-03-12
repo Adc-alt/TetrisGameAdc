@@ -15,6 +15,20 @@ void Renderer::DrawBlock(const Block& block) {
     }
 }
 
+void Renderer::DrawNextBlock(const Block& block) {
+    // Dibujamos el siguiente bloque en el panel de "Next Piece"
+    // Ajustamos la posición para que aparezca en el panel
+    for (const Vector2& pos : block.positions) {
+        DrawRectangle(
+            (pos.x + 8) * CELL_SIZE,  // Desplazamiento para centrar en el panel
+            (pos.y + 10) * CELL_SIZE, // Desplazamiento vertical para el panel
+            CELL_SIZE,
+            CELL_SIZE,
+            block.color
+        );
+    }
+}
+
 void Renderer::DrawGrid() {
     // Líneas verticales
     for (int i = CELL_SIZE; i <= CELL_SIZE * (GRID_WIDTH + 1); i += CELL_SIZE) {

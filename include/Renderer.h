@@ -13,6 +13,7 @@ class Renderer {
     public:
         Renderer(int& gameScore);  // Solo declaración del constructor
         void DrawBlock(const Block& block);
+        void DrawNextBlock(const Block& block);  // Nuevo método para dibujar el siguiente bloque
         void DrawGrid();
         void DrawUI();
         void DrawBoard();

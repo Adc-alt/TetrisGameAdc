@@ -3,38 +3,12 @@
 #include "Constants.h"
 
 Tetromino::Tetromino() {
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, blocks.size() - 1);
-    currentBlock = &blocks[dis(gen)];   
+    // Iniciamos con el primer bloque de la lista
+    currentBlock = &blocks[0];
 }
 
-const Block& Tetromino::GetCurrentBlock() const { return *currentBlock; }
-
-void Tetromino::GenerateNextBlock() {
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(0, blocks.size() - 1);
-    currentBlock = &blocks[dis(gen)];
-}
-
-bool Tetromino::WouldCollide(const vector<Block>& fixedBlocks, const Vector2& offset) {
-    // Guardamos las posiciones originales
-    deque<Vector2> originalPositions = currentBlock->positions;
-    
-    // Simulamos el movimiento
-    for (Vector2& pos : currentBlock->positions) {
-        pos.x += offset.x;
-        pos.y += offset.y;
-    }
-
-    // Comprobamos colisiones
-    bool wouldCollide = checkCollisionPiece(fixedBlocks);
-    
-    // Restauramos las posiciones originales
-    currentBlock->positions = originalPositions;
-    
-    return wouldCollide;
+const Block& Tetromino::GetCurrentBlock() const { 
+    return *currentBlock; 
 }
 
 void Tetromino::RotateBlock() {
@@ -177,5 +151,24 @@ bool Tetromino::checkLineFull(const vector<Block>& fixedBlocks) {
         if (!occupied) return false;
     }
     return true;
+}
+
+bool Tetromino::WouldCollide(const vector<Block>& fixedBlocks, const Vector2& offset) {
+    // Guardamos las posiciones originales
+    deque<Vector2> originalPositions = currentBlock->positions;
+    
+    // Simulamos el movimiento
+    for (Vector2& pos : currentBlock->positions) {
+        pos.x += offset.x;
+        pos.y += offset.y;
+    }
+
+    // Comprobamos colisiones
+    bool wouldCollide = checkCollisionPiece(fixedBlocks);
+    
+    // Restauramos las posiciones originales
+    currentBlock->positions = originalPositions;
+    
+    return wouldCollide;
 }
 
